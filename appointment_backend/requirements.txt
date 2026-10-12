@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# Appointment & Service Booking System - Backend dependencies
+# Target: Python 3.13 (Windows) / MySQL 8.0+
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# Export pinned (fully resolved) versions at any time with:
+#   pip freeze > requirements.lock.txt
+# ---------------------------------------------------------------------------
+
+# --- Core framework -------------------------------------------------------
+Django~=5.2.0
+
+# --- REST API -------------------------------------------------------------
+djangorestframework~=3.16.0
+djangorestframework-simplejwt~=5.5.0
+django-filter~=25.1
+drf-spectacular~=0.28.0
+# NOTE: drf-spectacular-sidecar uses calendar-date versions, not semantic ones.
+drf-spectacular-sidecar==2026.10.1
+
+# --- Database -------------------------------------------------------------
+mysqlclient~=2.2.7
+
+# --- Security / configuration --------------------------------------------
+django-environ~=0.12.0
+django-cors-headers~=4.7.0
+
+# --- Validation / hashing for new passwords -------------------------------
+argon2-cffi~=25.1.0
+
+# --- Media / profile images ----------------------------------------------
+Pillow~=11.3.0
+
+# --- Background tasks (Phase 9: reminders) -------------------------------
+celery~=5.5.0
+redis~=6.2.0
+
+# --- Testing --------------------------------------------------------------
+pytest~=8.4.0
+pytest-django~=4.11.0
+factory-boy~=3.3.3
+freezegun~=1.5.2

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f3">
+    <title>{% block title %}Kindred — Care that fits your life{% endblock %}</title>
+    <link rel="icon" href="{% static 'favicon.svg' %}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="{% url 'home' %}" aria-label="Kindred home">
+            <span class="brand-mark">k</span>
+            <span>kindred<span class="brand-period">.</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="{% url 'home' %}#services">Services</a>
+            <a href="{% url 'home' %}#how-it-works">How it works</a>
+        </nav>
+        <a class="button button-small button-dark header-cta" href="{% url 'home' %}#book">Book a visit <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+        <a class="brand brand-footer" href="{% url 'home' %}">
+            <span class="brand-mark">k</span><span>kindred<span class="brand-period">.</span></span>
+        </a>
+        <p>Thoughtful care, made easy.</p>
+        <span class="footer-note">© {% now "Y" %} Kindred Studio</span>
+    </footer>
+</body>
+</html>

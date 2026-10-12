@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Appointment requested — Kindred{% endblock %}
+
+{% block content %}
+<section class="success-page">
+    <div class="success-card">
+        <div class="success-mark">✓</div>
+        <div class="eyebrow"><span class="eyebrow-line"></span> REQUEST RECEIVED</div>
+        <h1>You made<br><span>a little time.</span></h1>
+        <p class="success-lead">Thanks, {{ appointment.customer_name }}. Your appointment request is in, and we’ll reach out to confirm the details.</p>
+        <div class="appointment-summary">
+            <div><span>YOUR SERVICE</span><strong>{{ appointment.service.name }}</strong></div>
+            <div><span>DATE &amp; TIME</span><strong>{{ appointment.appointment_date|date:"l, F j, Y" }} at {{ appointment.appointment_time|time:"g:i A" }}</strong></div>
+            <div><span>REQUEST STATUS</span><strong class="status-pill">{{ appointment.get_status_display }}</strong></div>
+        </div>
+        <a class="button button-dark" href="{% url 'home' %}">Back to home <span aria-hidden="true">↗</span></a>
+        <p class="success-footnote">A confirmation will follow once we’ve checked your preferred time.</p>
+    </div>
+</section>
+{% endblock %}
